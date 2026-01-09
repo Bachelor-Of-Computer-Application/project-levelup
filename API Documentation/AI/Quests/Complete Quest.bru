@@ -1,0 +1,26 @@
+meta {
+  name: Complete Quest
+  type: http
+  seq: 10
+}
+
+patch {
+  url: {{base_url}}/ai/quests/complete
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  Content-Type: application/json
+  x-language: eng
+}
+
+body:json {
+  {
+    "questId": "quest_id_here"
+  }
+}

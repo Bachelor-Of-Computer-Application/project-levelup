@@ -1,0 +1,27 @@
+meta {
+  name: Create Community
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{base_url}}/community/create
+  body: multipartForm
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  x-language: eng
+}
+
+body:multipart-form {
+  name: My Test Community
+  description: A community for testing
+  isPrivate: false
+  category: Fitness
+  photo: @file(/path/to/photo.jpg)
+}

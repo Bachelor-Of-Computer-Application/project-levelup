@@ -1,0 +1,19 @@
+meta {
+  name: Admin Get Quest Stats
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{base_url}}/ai/admin/quests/stats
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  x-language: eng
+}

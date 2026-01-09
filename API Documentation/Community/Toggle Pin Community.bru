@@ -1,0 +1,26 @@
+meta {
+  name: Toggle Pin Community
+  type: http
+  seq: 16
+}
+
+post {
+  url: {{base_url}}/community/toggle-pin
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  Content-Type: application/json
+  x-language: eng
+}
+
+body:json {
+  {
+    "communityIds": ["community_id_1", "community_id_2"]
+  }
+}

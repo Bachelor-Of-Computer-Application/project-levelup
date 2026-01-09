@@ -1,0 +1,27 @@
+meta {
+  name: Get All Communities
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{base_url}}/community?page=1&limit=10
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  x-language: eng
+}
+
+params:query {
+  page: 1
+  limit: 10
+  ~sortBy: createdAt
+  ~isPrivate: false
+  ~search: fitness
+}

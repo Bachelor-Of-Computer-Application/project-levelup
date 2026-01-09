@@ -1,0 +1,26 @@
+meta {
+  name: Join Private Community
+  type: http
+  seq: 9
+}
+
+post {
+  url: {{base_url}}/community/join
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  Content-Type: application/json
+  x-language: eng
+}
+
+body:json {
+  {
+    "joinCode": "ABC123"
+  }
+}

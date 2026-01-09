@@ -1,0 +1,28 @@
+meta {
+  name: Create Clan
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{base_url}}/clan/create
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  Content-Type: application/json
+  x-language: eng
+}
+
+body:json {
+  {
+    "name": "My Clan",
+    "communityId": "community_id_here",
+    "description": "Clan description"
+  }
+}

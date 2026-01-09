@@ -1,0 +1,23 @@
+meta {
+  name: Check Clan Membership
+  type: http
+  seq: 10
+}
+
+get {
+  url: {{base_url}}/clan/checkMembership/:clanId
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  x-language: eng
+}
+
+params:path {
+  clanId: clan_id_here
+}

@@ -1,0 +1,23 @@
+meta {
+  name: Delete Quest (Admin)
+  type: http
+  seq: 11
+}
+
+delete {
+  url: {{base_url}}/ai/quests/:questId
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  x-language: eng
+}
+
+params:path {
+  questId: quest_id_here
+}

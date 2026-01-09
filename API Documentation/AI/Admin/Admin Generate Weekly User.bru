@@ -1,0 +1,23 @@
+meta {
+  name: Admin Generate Weekly User
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{base_url}}/ai/admin/generate/weekly/:userId
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  x-language: eng
+}
+
+params:path {
+  userId: user_id_here
+}

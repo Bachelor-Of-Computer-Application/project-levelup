@@ -1,0 +1,62 @@
+meta {
+  name: Transfer Ownership
+  type: http
+  seq: 12
+}
+
+post {
+  url: {{base_url}}/community/:communityId/transfer-ownership
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  Content-Type: application/json
+  x-language: eng
+}
+
+params:path {
+  communityId: community_id_here
+}
+
+body:json {
+  {
+    "newOwnerId": "user_id_or_community_member_id_here"
+  }
+}
+
+docs {
+  ## Transfer Community Ownership
+  
+  Transfers ownership of a community to another member.
+  
+  ### Authentication
+  - Requires valid bearer token
+  - Only the current community owner can transfer ownership
+  
+  ### Parameters
+  - `communityId` (path): The ID of the community
+  - `newOwnerId` (body): Can be either:
+    - The User.id of the target member
+    - The CommunityMember.id (join table record ID)
+  
+  ### Process
+  1. Validates the new owner is a current member
+  2. Updates community ownerId
+  3. Promotes new owner to ADMIN role
+  4. Demotes current owner to MEMBER role
+  5. All operations wrapped in a transaction
+  
+  ### Response
+  Returns the updated community object with new owner information
+  
+  ### Errors
+  - 401: Not authenticated
+  - 403: User is not the current owner
+  - 400: New owner is not a member of the community
+  - 404: Community not found
+}

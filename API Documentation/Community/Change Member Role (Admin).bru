@@ -1,0 +1,55 @@
+meta {
+  name: Change Member Role (Admin)
+  type: http
+  seq: 14
+}
+
+patch {
+  url: {{base_url}}/community/:communityId/members/:memberId/role
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  Content-Type: application/json
+  x-language: eng
+}
+
+params:path {
+  communityId: community_id_here
+  memberId: user_id_or_community_member_id_here
+}
+
+body:json {
+  {
+    "role": "ADMIN"
+  }
+}
+
+docs {
+  ## Change Member Role (Make Admin)
+  
+  Promotes or demotes a community member's role.
+  
+  **Authentication:** Required (Bearer token)
+  **Authorization:** ADMIN role or community owner
+  
+  ### Path Parameters
+  - `communityId`: The community's unique ID
+  - `memberId`: Can be either:
+    - The **user's ID** (User.id)
+    - The **CommunityMember record ID** (CommunityMember.id)
+  
+  ### Body Parameters
+  - `role`: Either "ADMIN" or "MEMBER"
+  
+  ### Restrictions
+  - Cannot change the owner's role
+  - Only admins and owners can change roles
+  
+  ### Response
+  Returns the updated member data with new role.

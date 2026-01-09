@@ -1,0 +1,23 @@
+meta {
+  name: Delete All Chat History
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{base_url}}/ai/chat/history?all=true
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  x-language: eng
+}
+
+params:query {
+  all: true
+}

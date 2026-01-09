@@ -1,0 +1,22 @@
+meta {
+  name: Verify Email
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{base_url}}/auth/verify-email
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+  x-language: eng
+}
+
+body:json {
+  {
+    "token": "verification_token_here"
+  }
+}

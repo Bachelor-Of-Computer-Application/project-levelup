@@ -1,0 +1,23 @@
+meta {
+  name: Get Clan Members
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{base_url}}/clan/members/:clanId
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  x-language: eng
+}
+
+params:path {
+  clanId: clan_id_here
+}

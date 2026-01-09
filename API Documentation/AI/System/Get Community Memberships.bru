@@ -1,0 +1,19 @@
+meta {
+  name: Get Community Memberships
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{base_url}}/ai/community/memberships
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  x-language: eng
+}

@@ -1,0 +1,19 @@
+meta {
+  name: Get Token Balance
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{base_url}}/ai/chat/tokens
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  x-language: eng
+}

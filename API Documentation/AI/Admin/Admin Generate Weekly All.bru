@@ -1,0 +1,19 @@
+meta {
+  name: Admin Generate Weekly All
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{base_url}}/ai/admin/generate/weekly/all
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  x-language: eng
+}

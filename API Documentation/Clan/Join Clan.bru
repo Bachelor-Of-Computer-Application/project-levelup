@@ -1,0 +1,26 @@
+meta {
+  name: Join Clan
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{base_url}}/clan/join
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  Content-Type: application/json
+  x-language: eng
+}
+
+body:json {
+  {
+    "clanId": "clan_id_here"
+  }
+}

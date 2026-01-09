@@ -1,0 +1,32 @@
+meta {
+  name: Update Ticket
+  type: http
+  seq: 1
+}
+
+put {
+  url: {{base_url}}/admin/ticket/:id
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  Content-Type: application/json
+  x-language: eng
+}
+
+params:path {
+  id: ticket_id_here
+}
+
+body:json {
+  {
+    "status": "WORKING_ON",
+    "priority": "HIGH",
+    "expectedDateOfCompletion": "2026-02-01T00:00:00.000Z"
+  }
+}

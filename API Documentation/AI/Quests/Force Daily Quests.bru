@@ -1,0 +1,19 @@
+meta {
+  name: Force Daily Quests
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{base_url}}/ai/generate/daily/force
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  x-language: eng
+}

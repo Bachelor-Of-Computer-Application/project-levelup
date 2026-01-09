@@ -1,0 +1,30 @@
+meta {
+  name: Change Community Category
+  type: http
+  seq: 6
+}
+
+patch {
+  url: {{base_url}}/admin/communities/:communityId/category
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  Content-Type: application/json
+  x-language: eng
+}
+
+params:path {
+  communityId: community_id_here
+}
+
+body:json {
+  {
+    "category": "Technology"
+  }
+}

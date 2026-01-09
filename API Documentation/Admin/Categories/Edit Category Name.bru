@@ -1,0 +1,30 @@
+meta {
+  name: Edit Category Name
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{base_url}}/admin/categories/:oldName
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  Content-Type: application/json
+  x-language: eng
+}
+
+params:path {
+  oldName: OldCategoryName
+}
+
+body:json {
+  {
+    "newName": "NewCategoryName"
+  }
+}

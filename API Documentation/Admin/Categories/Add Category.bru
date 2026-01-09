@@ -1,0 +1,26 @@
+meta {
+  name: Add Category
+  type: http
+  seq: 9
+}
+
+post {
+  url: {{base_url}}/admin/communities/addCategory
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  Content-Type: application/json
+  x-language: eng
+}
+
+body:json {
+  {
+    "category": "New Category"
+  }
+}

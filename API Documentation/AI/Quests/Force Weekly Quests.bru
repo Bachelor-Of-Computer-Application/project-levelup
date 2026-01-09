@@ -1,0 +1,19 @@
+meta {
+  name: Force Weekly Quests
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{base_url}}/ai/generate/weekly/force
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  x-language: eng
+}

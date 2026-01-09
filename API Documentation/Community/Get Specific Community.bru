@@ -1,0 +1,23 @@
+meta {
+  name: Get Specific Community
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{base_url}}/community/:communityId
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  x-language: eng
+}
+
+params:path {
+  communityId: community_id_here
+}

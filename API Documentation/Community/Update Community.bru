@@ -1,0 +1,32 @@
+meta {
+  name: Update Community
+  type: http
+  seq: 11
+}
+
+patch {
+  url: {{base_url}}/community/:communityId
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  Content-Type: application/json
+  x-language: eng
+}
+
+params:path {
+  communityId: community_id_here
+}
+
+body:json {
+  {
+    "name": "Updated Community Name",
+    "description": "Updated description",
+    "isPrivate": true
+  }
+}

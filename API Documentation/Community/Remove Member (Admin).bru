@@ -1,0 +1,34 @@
+meta {
+  name: Remove Member (Admin)
+  type: http
+  seq: 13
+}
+
+delete {
+  url: {{base_url}}/community/:communityId/members/:memberId
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  x-language: eng
+}
+
+params:path {
+  communityId: community_id_here
+  memberId: user_id_or_community_member_id_here
+}
+
+docs {
+  Removes a member from the community. Requires ADMIN role.
+  
+  **memberId** can be either:
+  - The user's ID (userId from User table)
+  - The CommunityMember record ID (id from CommunityMember table)
+  
+  **Note:** Cannot remove the community owner.
+}

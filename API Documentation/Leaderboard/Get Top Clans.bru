@@ -1,0 +1,26 @@
+meta {
+  name: Get Top Clans
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{base_url}}/leaderboard/top-clans?sortBy=xp&order=desc&limit=20
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  x-language: eng
+}
+
+params:query {
+  ~communityId: community_id_here
+  ~sortBy: xp
+  ~order: desc
+  ~limit: 20
+}

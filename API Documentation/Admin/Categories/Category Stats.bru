@@ -1,0 +1,19 @@
+meta {
+  name: Category Stats
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{base_url}}/admin/categories/stats
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  x-language: eng
+}

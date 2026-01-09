@@ -1,0 +1,23 @@
+meta {
+  name: Search Communities
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{base_url}}/community/search?query=fitness
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  x-language: eng
+}
+
+params:query {
+  query: fitness
+}

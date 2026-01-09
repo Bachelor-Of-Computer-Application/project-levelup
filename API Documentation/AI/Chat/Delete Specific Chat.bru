@@ -1,0 +1,23 @@
+meta {
+  name: Delete Specific Chat
+  type: http
+  seq: 5
+}
+
+delete {
+  url: {{base_url}}/ai/chat/history/:chatId
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  x-language: eng
+}
+
+params:path {
+  chatId: chat_id_here
+}

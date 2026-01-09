@@ -1,0 +1,27 @@
+meta {
+  name: OnBoarding
+  type: http
+  seq: 13
+}
+
+post {
+  url: {{base_url}}/auth/onBoarding
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  Content-Type: application/json
+  x-language: eng
+}
+
+body:json {
+  {
+    "categories": ["Fitness", "Technology"],
+    "motivation": "To improve myself"
+  }
+}

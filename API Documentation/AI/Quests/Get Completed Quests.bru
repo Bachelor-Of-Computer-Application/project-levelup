@@ -1,0 +1,24 @@
+meta {
+  name: Get Completed Quests
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{base_url}}/ai/quests/completed?page=1&limit=10
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  x-language: eng
+}
+
+params:query {
+  page: 1
+  limit: 10
+}

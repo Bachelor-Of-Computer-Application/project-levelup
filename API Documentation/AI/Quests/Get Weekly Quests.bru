@@ -1,0 +1,19 @@
+meta {
+  name: Get Weekly Quests
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{base_url}}/ai/quests/weekly
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  x-language: eng
+}

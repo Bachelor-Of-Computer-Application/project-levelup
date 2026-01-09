@@ -1,0 +1,19 @@
+meta {
+  name: Get Daily Quests
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{base_url}}/ai/quests/daily
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  x-language: eng
+}

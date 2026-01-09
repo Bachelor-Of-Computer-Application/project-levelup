@@ -1,0 +1,32 @@
+meta {
+  name: Update Ticket By ID
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{base_url}}/ticket/:id
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  Content-Type: application/json
+  x-language: eng
+}
+
+params:path {
+  id: ticket_id_here
+}
+
+body:json {
+  {
+    "title": "Updated Title",
+    "description": "Updated description",
+    "status": "IN_PROGRESS"
+  }
+}

@@ -1,0 +1,32 @@
+meta {
+  name: Update Community Details
+  type: http
+  seq: 7
+}
+
+put {
+  url: {{base_url}}/admin/communities/:communityId
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  Content-Type: application/json
+  x-language: eng
+}
+
+params:path {
+  communityId: community_id_here
+}
+
+body:json {
+  {
+    "name": "Updated Community Name",
+    "description": "Updated description",
+    "category": "Fitness"
+  }
+}

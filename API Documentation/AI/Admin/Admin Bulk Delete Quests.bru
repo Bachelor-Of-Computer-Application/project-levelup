@@ -1,0 +1,26 @@
+meta {
+  name: Admin Bulk Delete Quests
+  type: http
+  seq: 6
+}
+
+delete {
+  url: {{base_url}}/ai/admin/quests
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  Content-Type: application/json
+  x-language: eng
+}
+
+body:json {
+  {
+    "questIds": ["quest_id_1", "quest_id_2"]
+  }
+}

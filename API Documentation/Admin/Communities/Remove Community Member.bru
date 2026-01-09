@@ -1,0 +1,24 @@
+meta {
+  name: Remove Community Member
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{base_url}}/admin/communities/:communityId/members/:memberId
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  x-language: eng
+}
+
+params:path {
+  communityId: community_id_here
+  memberId: user_id_here
+}

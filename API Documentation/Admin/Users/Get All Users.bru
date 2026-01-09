@@ -1,0 +1,26 @@
+meta {
+  name: Get All Users
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{base_url}}/admin/users/all?page=1&limit=10
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  x-language: eng
+}
+
+params:query {
+  page: 1
+  limit: 10
+  ~search: username
+  ~sortBy: createdAt
+}

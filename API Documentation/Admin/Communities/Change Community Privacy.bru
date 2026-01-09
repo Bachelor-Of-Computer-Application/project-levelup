@@ -1,0 +1,30 @@
+meta {
+  name: Change Community Privacy
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{base_url}}/admin/communities/:communityId/privacy
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  Content-Type: application/json
+  x-language: eng
+}
+
+params:path {
+  communityId: community_id_here
+}
+
+body:json {
+  {
+    "isPrivate": true
+  }
+}

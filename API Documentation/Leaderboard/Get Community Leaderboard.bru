@@ -1,0 +1,28 @@
+meta {
+  name: Get Community Leaderboard
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{base_url}}/leaderboard/community/:communityId?page=1&limit=20
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  x-language: eng
+}
+
+params:path {
+  communityId: community_id_here
+}
+
+params:query {
+  page: 1
+  limit: 20
+}

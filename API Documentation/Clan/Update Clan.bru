@@ -1,0 +1,31 @@
+meta {
+  name: Update Clan
+  type: http
+  seq: 8
+}
+
+put {
+  url: {{base_url}}/clan/:clanId
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  Content-Type: application/json
+  x-language: eng
+}
+
+params:path {
+  clanId: clan_id_here
+}
+
+body:json {
+  {
+    "name": "Updated Clan Name",
+    "description": "Updated description"
+  }
+}
